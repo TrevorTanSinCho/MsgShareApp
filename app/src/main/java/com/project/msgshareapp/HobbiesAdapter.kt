@@ -32,7 +32,8 @@ class HobbiesAdapter(val context: Context, val hobbies: List<Hobby>) : RecyclerV
 
         init {
             itemView.setOnClickListener {
-                Toast.makeText(context,"${currentHobby!!.title} Clicked !",Toast.LENGTH_SHORT).show()
+                context.showToast("${currentHobby!!.title} Clicked !")
+                //Toast.makeText(context,"${currentHobby!!.title} Clicked !",Toast.LENGTH_SHORT).show()
             }
 
             itemView.imgShare.setOnClickListener {
