@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">资讯分享软件</string>
+    <string name="btn_show_toast">显示标语</string>
+    <string name="et_enter_message">输入你的信息</string>
+    <string name="send_data_to_next_activity">传送信息到下个活动</string>
+    <string name="share_to_other_apps">分享至其他软件</string>
+    <string name="recycler_view_demo">循环视窗测试</string>
+    <string name="btn_was_clicked">按钮被启动</string>
+</resources>
