@@ -32,23 +32,35 @@ class HobbiesAdapter(val context: Context, val hobbies: List<Hobby>) : RecyclerV
 
         init {
             itemView.setOnClickListener {
-                context.showToast("${currentHobby!!.title} Clicked !")
+                currentHobby?.let { context.showToast("${currentHobby!!.title} Clicked !") }
+                //context.showToast("${currentHobby!!.title} Clicked !")
                 //Toast.makeText(context,"${currentHobby!!.title} Clicked !",Toast.LENGTH_SHORT).show()
             }
 
             itemView.imgShare.setOnClickListener {
-                val message = "My hobby is: " + currentHobby!!.title
+                currentHobby?.let {
+                    val message = "My hobby is: " + currentHobby!!.title
 
-                val intent = Intent()
-                intent.action = Intent.ACTION_SEND
-                intent.putExtra(Intent.EXTRA_TEXT, message)
-                intent.type = "text/plain"
+                    val intent = Intent()
+                    intent.action = Intent.ACTION_SEND
+                    intent.putExtra(Intent.EXTRA_TEXT, message)
+                    intent.type = "text/plain"
 
-                context.startActivity(Intent.createChooser(intent, "Please select app: "))
+                    context.startActivity(Intent.createChooser(intent, "Please select app: "))
+                }
+//                val message = "My hobby is: " + currentHobby!!.title
+//
+//                val intent = Intent()
+//                intent.action = Intent.ACTION_SEND
+//                intent.putExtra(Intent.EXTRA_TEXT, message)
+//                intent.type = "text/plain"
+//
+//                context.startActivity(Intent.createChooser(intent, "Please select app: "))
             }
         }
         fun setData(hobby: Hobby?, pos: Int){
-            itemView.txvTitle.text = hobby!!.title
+            hobby?.let { itemView.txvTitle.text = hobby.title }
+//            itemView.txvTitle.text = hobby!!.title
 
             currentHobby = hobby
             currentPosition = pos
